@@ -100,7 +100,7 @@ async function getStoredDb(env) {
   const kv = findKv(env);
   if (kv) {
     try {
-      const dataStr = await kv.get('db_data');
+      const dataStr = await kv.get('db_data_mm88');
       if (dataStr) {
         const parsed = JSON.parse(dataStr);
         if (parsed && Array.isArray(parsed.codes)) {
@@ -120,7 +120,7 @@ async function saveStoredDb(env, db) {
   const kv = findKv(env);
   if (kv) {
     try {
-      await kv.put('db_data', JSON.stringify(db));
+      await kv.put('db_data_mm88', JSON.stringify(db));
     } catch (e) {
       console.error('KV put error:', e);
     }

@@ -5,8 +5,7 @@ pages_build_output_dir = "."
 [vars]
 ENVIRONMENT = "production"
 
-# XOAMA_KV binding is configured on the Cloudflare Pages project (Settings > Functions).
-# Set `id` here only for local `wrangler pages dev`.
+# Shared KV namespace (Freze account), isolated by the "db_data_mm88" key in functions.
 [[kv_namespaces]]
 binding = "XOAMA_KV"
-id = ""
+id = "ae45bcd2386d4fd9a98473173784607b"
