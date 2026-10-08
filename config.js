@@ -39,8 +39,11 @@ window.REDIRECT_URL = window.REDIRECT_URL || "";
             var tele = entry.telegram_url || entry.messenger_url || '';
             if (tele) {
               window.SUPPORT_TELEGRAM = tele;
-              var teles = document.querySelectorAll('a.support-telegram, a[data-role="telegram"]');
+              var teles = document.querySelectorAll('a.support-telegram, a[data-role="telegram"], #license-link');
               for (var j = 0; j < teles.length; j++) teles[j].href = tele;
+              var handle = tele.replace(/^https?:\/\/(t\.me|telegram\.me)\//i, '').replace(/\/.*$/, '').replace(/^@/, '');
+              var licenseHandle = document.getElementById('license-handle');
+              if (handle && licenseHandle) licenseHandle.textContent = '@' + handle;
             }
           }
         }
