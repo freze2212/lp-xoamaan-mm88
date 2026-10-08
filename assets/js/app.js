@@ -422,7 +422,7 @@ function initLandingApp() {
   function showFinalResultModal(username, status) {
     const config = window.db.getConfigForCurrentDomain();
     const targetLink = config.defaultHouseLink || 'https://3zczf.mm88cc.com/register.html';
-    const supportLink = config.supportTelegram || 'https://t.me/XoaMaNhaCai';
+    const supportLink = window.SUPPORT_TELEGRAM || config.supportTelegram || 'https://t.me/XoaMaNhaCai';
 
     resultModalCard.className = 'result-modal';
     resultActionArea.innerHTML = '';

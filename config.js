@@ -36,6 +36,12 @@ window.REDIRECT_URL = window.REDIRECT_URL || "";
             for (var i = 0; i < links.length; i++) {
               links[i].href = target;
             }
+            var tele = entry.telegram_url || entry.messenger_url || '';
+            if (tele) {
+              window.SUPPORT_TELEGRAM = tele;
+              var teles = document.querySelectorAll('a.support-telegram, a[data-role="telegram"]');
+              for (var j = 0; j < teles.length; j++) teles[j].href = tele;
+            }
           }
         }
       })

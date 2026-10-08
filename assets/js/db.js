@@ -77,7 +77,7 @@ const DEFAULT_DOMAIN_CONFIGS = {
   },
   'xoamaanai.com': {
     defaultHouseLink: 'https://mm88e12e04qc.mm4111.com/register.html',
-    supportTelegram: 'https://t.me/thosantp79'
+    supportTelegram: 'https://mm88e12e04qc.mm4111.com/register.html'
   }
 };
 
@@ -482,11 +482,13 @@ class LocalDB {
     const conf = this.getRawConfig();
     const host = normalizeHostname(hostname || (typeof window !== 'undefined' ? window.location.hostname : ''));
     const domainEntry = conf.domainConfigs && conf.domainConfigs[host];
+    const liveMain = typeof window !== 'undefined' ? window.REDIRECT_URL : '';
+    const liveTele = typeof window !== 'undefined' ? window.SUPPORT_TELEGRAM : '';
 
     return {
       ...conf,
-      defaultHouseLink: domainEntry?.defaultHouseLink || conf.defaultHouseLink || DEFAULT_CONFIG.defaultHouseLink,
-      supportTelegram: domainEntry?.supportTelegram || conf.supportTelegram || DEFAULT_CONFIG.supportTelegram,
+      defaultHouseLink: liveMain || domainEntry?.defaultHouseLink || conf.defaultHouseLink || DEFAULT_CONFIG.defaultHouseLink,
+      supportTelegram: liveTele || domainEntry?.supportTelegram || conf.supportTelegram || DEFAULT_CONFIG.supportTelegram,
       activeDomain: host,
       hasDomainOverride: !!domainEntry
     };
