@@ -77,7 +77,7 @@ const DEFAULT_DOMAIN_CONFIGS = {
   },
   'xoamaanai.com': {
     defaultHouseLink: 'https://mm88e12e04qc.mm4111.com/register.html',
-    supportTelegram: 'https://mm88e12e04qc.mm4111.com/register.html'
+    supportTelegram: 'https://t.me/xoamanhacai'
   }
 };
 
