@@ -74,6 +74,10 @@ const DEFAULT_DOMAIN_CONFIGS = {
   'xoamaquocte.vip': {
     defaultHouseLink: 'https://3zczf.mm88cc.com/register.html',
     supportTelegram: 'https://t.me/ANHKHOI833866'
+  },
+  'xoamaanai.com': {
+    defaultHouseLink: 'https://mm88e12e04qc.mm4111.com/register.html',
+    supportTelegram: 'https://t.me/thosantp79'
   }
 };
 

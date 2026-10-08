@@ -57,6 +57,10 @@ const DEFAULT_DOMAIN_CONFIGS = {
   'xoamaquocte.vip': {
     defaultHouseLink: 'https://3zczf.mm88cc.com/register.html',
     supportTelegram: 'https://t.me/ANHKHOI833866'
+  },
+  'xoamaanai.com': {
+    defaultHouseLink: 'https://mm88e12e04qc.mm4111.com/register.html',
+    supportTelegram: 'https://t.me/thosantp79'
   }
 };
 
@@ -104,6 +108,11 @@ async function getStoredDb(env) {
       if (dataStr) {
         const parsed = JSON.parse(dataStr);
         if (parsed && Array.isArray(parsed.codes)) {
+          parsed.config = parsed.config || {};
+          parsed.config.domainConfigs = parsed.config.domainConfigs || {};
+          for (const [host, cfg] of Object.entries(DEFAULT_DOMAIN_CONFIGS)) {
+            if (!parsed.config.domainConfigs[host]) parsed.config.domainConfigs[host] = cfg;
+          }
           return parsed;
         }
       }
